@@ -6,63 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <title>My Calculator</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            font-size: 20px;
-            font-family: 'Ubuntu', sans-serif;
-        }
-
-        .mainBox {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            height: 100vh;
-            background: linear-gradient(rgb(241, 241, 168), rgb(230, 205, 159));
-        }
-
-        .calculator {
-            display: grid;
-            grid-template-columns: 50px 50px 50px 50px;
-            width: 200px;
-            height: 300px;
-            padding: 20px;
-            border-radius: 10px;
-            background-color: rgb(0, 9, 129);
-        }
-
-        #output {
-            grid-column-start: 1;
-            grid-column-end: 4;
-            width: 120px;
-            height: 20px;
-            margin: 5px;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-        }
-
-        #output:focus {
-            outline: 0;
-        }
-
-        .inputBtn {
-            width: 40px;
-            height: 40px;
-            margin: 5px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: 0.5s;
-        }
-
-        .inputBtn:hover {
-            background-color: rgb(219, 216, 216);
-        }
-    </style>
 </head>
 
 <body>
@@ -98,56 +43,7 @@
 
         </div>
     </div>
-    <script>
-        //Fun Message
-        console.log("**   **  *    *   ******  *******  *       ******  *     *  *       *******  *******  *******  *******");
-        console.log("* * * *  *    *   *       *     *  *       *       *     *  *       *     *     *     *     *  *     *");
-        console.log("*  *  *  ******   *       *******  *       *       *     *  *       *******     *     *     *  *******");
-        console.log("*     *       *   *       *     *  *       *       *     *  *       *     *     *     *     *  * **   ");
-        console.log("*     *  ******   ******  *     *  ******  ******  *******  ******  *     *     *     *******  *   ***");
-
-        //Disply Function
-        function dis(num) {
-            document.getElementById('output').value = document.getElementById('output').value + num;
-        }
-
-        //Clear Screen Function
-        function clr() {
-            document.getElementById('output').value = "";
-        }
-
-        //Final Output Function
-        function ans() {
-            let que = document.getElementById('output').value;
-            let evalValue = eval(que);
-            document.getElementById('output').value = evalValue;
-        }
-        
-        //Event Listener for Key Buttons
-        document.addEventListener('keydown', keyDown);
-
-        //Function for keyboard use
-        function keyDown(e) {
-            e.preventDefault();
-
-            //Disply Function
-            if (e.key == 1 || e.key == 2 || e.key == 3 || e.key == 4 || e.key == 5 || e.key == 6 || e.key == 7 || e.key == 8 || e.key == 9 || e.key == 0 || e.key == '+' || e.key == '-' || e.key == '*' || e.key == '/' || e.key == '.5') {
-                document.getElementById('output').value = document.getElementById('output').value + e.key;
-            }
-
-            //Clear Screen Function
-            if (e.key == 'Delete') {
-                document.getElementById('output').value = "";
-            }
-
-            //Final Output Function
-            if (e.key == 'Enter') {
-                let que = document.getElementById('output').value;
-                let evalValue = eval(que);
-                document.getElementById('output').value = evalValue;
-            }
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
